@@ -1,0 +1,71 @@
+.register-page {
+  .header {
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @media (max-width: 991.98px) {
+      height: auto;
+      margin-top: 50px;
+     }
+
+  }
+  .forms-groups {
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @media (max-width: 991.98px) {
+      height: auto;
+      margin-top: 50px;
+     }
+  }
+  form {
+    position: relative;
+    width: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($white-color, .11);
+      top: -1.5rem;
+      inset-inline-end: -1.5rem;
+      border-radius: 1.25rem;
+    }
+
+  }
+  .form-login {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem     ;
+    border-radius: 1.25rem;
+
+    .form-control {
+      height: 3rem;
+    }
+    .icon-password {
+      color: $primary-color;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      inset-inline-end: 1rem;
+      cursor: pointer;
+      &.show {
+        i {
+          &::before {
+            content: '\f070';
+          }
+        }
+      }
+    }
+    .btn {
+      height: 2.5rem;
+    }
+  }
+}

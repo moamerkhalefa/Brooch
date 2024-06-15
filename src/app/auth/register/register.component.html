@@ -1,0 +1,86 @@
+<section class="page-login register-page">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="header">
+          <div class="img">
+            <img src="../../../assets/imgs/register.png" alt="">
+          </div>
+          <h2 class="text-white">لإدارة ومتابعة الممتلكات الخاصة بك</h2>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="forms-groups">
+
+          <form class="form" [formGroup]="registerForm"  >
+            <div class="form-login bg-white    text-start">
+              <div class="mb-3">
+                <label for="name" class="form-label">الاسم</label>
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder="ادخل الاسم "
+                [class]="registerForm.get('name')?.errors && registerForm.get('name')?.touched ? 'is-invalid' : '' "
+                [class]="registerForm.get('name')?.valid  ? 'is-valid' : ''"
+                >
+                <div class="alert alert-danger p-1 px-3" *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched">
+                  <span class="mb-0 form-text" *ngIf="registerForm.get('name')?.getError('required')"> Name Is required</span>
+                  <span class="mb-0 form-text" *ngIf="registerForm.get('name')?.getError('minlength')"> Name Is min Length 5</span>
+                  <span class="mb-0 form-text" *ngIf="registerForm.get('name')?.getError('maxlength')"> Name Is max Length 13</span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">رقم الهاتف</label>
+                <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="ادخل رقم الهاتف">
+                <div class="alert alert-danger p-1 px-3" *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched">
+                  <span class="mb-0 form-text" *ngIf="registerForm.get('phone')?.getError('required')"> Phone Is required</span>
+                  <span class="mb-0 form-text" *ngIf="registerForm.get('phone')?.getError('minlength')"> Phone Is min Length 10</span>
+                  <span class="mb-0 form-text" *ngIf="registerForm.get('phone')?.getError('maxlength')"> Phone Is max Length 13</span>
+                </div>
+              </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">البريد الإلكتروني</label>
+              <input type="email"  class="form-control" id="email" formControlName="email">
+              <div  class="alert alert-danger p-1 px-3" *NgIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched">
+                <span class="mb-0 form-text" *NgIf="registerForm.get('email')?.getError('required')">Email Is required</span>
+                <span class="mb-0 form-text" *NgIf="registerForm.get('email')?.getError('email')">Email Is invalid</span>
+              </div>
+            </div>
+            <div class="mb-3 ">
+              <label for="password" class="form-label">كلمة المرور</label>
+                <div class="position-relative">
+                <input [type]="showPassword ? 'text' : 'password'"  class="form-control" id="password" formControlName="password" >
+                <span class=" icon-password" [class.show]="showPassword" (click)="showPassword = !showPassword"><i class="fa-regular fa-eye"></i></span>
+              </div>
+              <div  class="alert alert-danger p-1 px-3" *NgIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched">
+                <span class="mb-0 form-text" *NgIf="registerForm.get('password')?.getError('required')">Password Is required</span>
+                <span class="mb-0 form-text" *ngIf="registerForm.get('password')?.getError('pattern')">Password Is invalid</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="rePassword" class="form-label">تاكيد كلمة المرور</label>
+              <div class="position-relative">
+
+                <input [type]="showRePassword ? 'text' : 'password'" class="form-control" id="rePassword" formControlName="rePassword" placeholder="ادخل كلمة المرور">
+                <span class=" icon-password" [class.show]="showRePassword" (click)="showRePassword = !showRePassword"><i class="fa-regular fa-eye"></i></span>
+
+              </div>
+              <div  class="alert alert-danger p-1 px-3" *ngIf="registerForm.get('rePassword')?.errors && registerForm.get('rePassword')?.touched">
+                <span class="mb-0 form-text" *ngIf="registerForm.get('rePassword')?.getError('required')">Password Is required</span>
+                <span class="mb-0 form-text" *ngIf="registerForm.get('rePassword')?.getError('pattern')">Password Is invalid</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary bg-gradient
+            w-100 d-block mb-3"   >
+            إنشاء حساب
+              </button>
+              <p class="text-center mb-0">
+                لدي حساب
+                <a  routerLink="/login"  >تسجيل الدخول؟</a>
+
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
