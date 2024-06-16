@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
   {path:'register',component:RegisterComponent},
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
 ];
 
 @NgModule({

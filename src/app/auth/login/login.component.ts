@@ -20,6 +20,7 @@ export class LoginComponent {
 
   login(form: FormGroup) {
     console.log(form.value);
+    this._router.navigate(['/home'])
     // if(form.valid) {
     //   this.isLoading = true
     //   this._authService.login(form.value).subscribe({

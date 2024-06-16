@@ -1,0 +1,37 @@
+
+.table-content .p-datatable .p-datatable-thead > tr > th ,
+.table-content .p-datatable .p-datatable-tbody > tr > td {
+  text-align: start;
+  font-family: cairo;
+}
+
+.table-content .p-datatable .p-datatable-thead > tr > th  {
+  background-color: #F1F3F9;
+  &:first-child {
+    border-start-start-radius: 10px;
+  }
+  &:last-child {
+    border-start-end-radius: 10px;
+  }
+}
+
+.table-content .p-datatable .p-datatable-tbody > tr:nth-child(even) {
+  background-color: #F8F9FC;
+}
+.table-content .p-tag {
+  width: 70%;
+  border-radius: 150px;
+}
+
+html:dir(rtl) {
+  .p-paginator-first , .p-paginator-prev , .p-paginator-next , .p-paginator-last{
+    svg {
+      transform: scale(-1);
+    }
+  }
+  .table-content .p-paginator .p-dropdown .p-dropdown-label {
+    padding-right: unset;
+    padding-inline-start: 0.75rem;
+    padding-inline-end: 0;
+}
+}
