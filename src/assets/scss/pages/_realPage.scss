@@ -1,0 +1,74 @@
+.real-estate-page {
+  .header-title {
+    button {
+      padding: 10px 25px;
+    }
+  }
+
+  .card-real {
+    display: flex;
+    width: 100%;
+    background-color:  #F2F5FF;
+    padding: 16px 13px;
+    border-radius: 15px;
+    gap: 20px;
+    transition: all 0.3s linear;
+    box-shadow: 0 0 0 rgba(63, 107, 250, 0)        ;
+    cursor: pointer;
+    margin-bottom: 20px;
+    .card-image {
+      img {
+        height: 112px;
+        width: 112px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        box-shadow: 0 30px 40px rgba(63, 107, 250, 0.4)        ;
+      }
+    }
+    .card-body {
+      flex-grow: 2;
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        .label {
+          background-color: #5EDE8A;
+          color: #fff;
+          border-radius: 50px;
+          padding: 5px 50px;
+        }
+      }
+      .info {
+        margin-bottom: 10px;
+        span {
+          color: #3F6AFA ;
+        }
+      }
+      .details {
+        gap: 20px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .size {
+          gap: 5px;
+        display: flex;
+        align-items: center;
+        }
+      }
+      .favourite {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        background-color: #D4E2FF;
+        color: #3F6AFA;
+        padding: 10px 20px;
+        border-radius: 50px;
+      }
+    }
+    &:hover {
+      box-shadow: 0 30px 40px rgba(63, 107, 250, 0.4)        ;
+    }
+  }
+}

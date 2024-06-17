@@ -1,0 +1,76 @@
+.real-details-page {
+  .carousel {
+    margin-bottom: 50px;
+    .carousel-indicators {
+      button {
+        width: 15px;
+        border-radius: 9px;
+        &.active {
+          width: 40px;
+        }
+      }
+    }
+    .carousel-inner {
+      box-shadow: 0 30px 40px rgba(63, 107, 250, 0.4)        ;
+      border-radius: 25px;
+      .carousel-item {
+        border-radius: 25px;
+        img {
+          border-radius: 25px;
+
+        }
+      }
+    }
+
+  }
+  .card-description {
+    flex-grow: 2;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      .label {
+        background-color: #5EDE8A;
+        color: #fff;
+        border-radius: 50px;
+        padding: 5px 50px;
+      }
+    }
+    .info {
+      margin-bottom: 10px;
+      span {
+        color: #3F6AFA ;
+      }
+    }
+    .details {
+      gap: 20px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      .size {
+        gap: 5px;
+      display: flex;
+      align-items: center;
+      }
+    }
+    .favourite {
+      gap: 10px;
+      display: flex;
+      align-items: center;
+      background-color: #D4E2FF;
+      color: #3F6AFA;
+      padding: 10px 20px;
+      border-radius: 50px;
+    }
+  }
+  .offcanvas-footer {
+    padding: 15px 10px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 -2px 15px rgba(#000,.2);
+    button {
+      flex: 1 0 0;
+    }
+  }
+}

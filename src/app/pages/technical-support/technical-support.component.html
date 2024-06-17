@@ -1,0 +1,112 @@
+<section class="support-page">
+  <header class="header pt-5">
+    <div class="d-flex justify-content-between">
+      <h5>الإعدادات والدعم الفني</h5>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#supportModal">
+        <i class="fa-solid fa-headset me-2"></i>
+        دعم جديد
+      </button>
+    </div>
+  </header>
+  <div class="table-content mt-4">
+
+    <p-table
+        [value]="products"
+        [paginator]="true"
+        [rows]="5"
+        [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [rowsPerPageOptions]="[5,10, 25]"
+    >
+      <ng-template pTemplate="header">
+          <tr>
+              <th>نوع الدعم	</th>
+              <th>الموضوع	</th>
+              <th>التاريخ</th>
+              <th>الرسالة</th>
+              <th>الحالة</th>
+              <th>أجراءات</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+          <tr>
+              <td>{{ product.code }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.category }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>
+                <p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)"></p-tag>
+              </td>
+              <td>
+                <div class="icon-group d-flex">
+                  <a class="icon-show me-2 text-dark"><i class="fa-regular fa-eye"></i></a>
+                  <a class="icon-download text-dark"><i class="fa-solid fa-download"></i></a>
+                </div>
+              </td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-table>
+  </div>
+</section>
+
+
+<!-- Start Modal -->
+<div class="modal fade support-modal" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="supportModalLabel">
+          <i class="fa-solid fa-headset me-2"></i>
+          دعم جديد
+
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">نوع الدعم</label>
+            <select class="form-select form-select-lg" aria-label="Default select example">
+              <option selected>حدد نوع الدعم</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">الموضوع</label>
+            <input type="text" class="form-control form-control-lg" >
+          </div>
+          <div class="mb-3 file-upload">
+            <label for="exampleInputEmail1" class="form-label">المستند</label>
+            <div class="position-relative">
+
+              <input class="form-control d-none" type="file" #fileInput (change)="onFileSelected($event)">
+              <input type="text" class="form-control form-control-lg" placeholder="حجم الملف : 5.00 mega"  (click)="fileInput.click()" [value]="fileName">
+              <button class="btn btn-main" type="button" (click)="fileInput.click()" (click)="resetFileInput()">ارفق المستند</button>
+            </div>
+          </div>
+          <div class="mb-3 ">
+            <label for="exampleInputEmail1" class="form-label">الرساله</label>
+            <textarea class="form-control form-control-lg"  rows="3" placeholder="الرساله"></textarea>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer justify-content-start">
+        <button type="button" class="btn btn-primary">
+          <i class="fa-solid fa-check me-2"></i>
+          حفظ
+        </button>
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">إلغاء</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal -->

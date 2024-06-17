@@ -13,3 +13,20 @@ a {
 .btn-primary {
   box-shadow: 0 4px 30px rgba(#5284F1, .7  );
 }
+
+
+/*^========> Customize Scrollbar <========*/
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #ebf5ff;
+  border-left: 2px solid #eee;
+  box-shadow: 0px 0px 21px 0px #0003 inset;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $primary-color;
+  box-shadow: 0px 0px 10px 0px #eeeeee8c inset;
+  border-radius: 100vh;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4D5ED2 ;
+}

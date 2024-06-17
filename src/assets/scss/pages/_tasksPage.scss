@@ -1,0 +1,93 @@
+.tasks-page {
+  .filter-calander {
+    .accordion {
+      .accordion-item {
+        border: none;
+        .accordion-button {
+          border-radius: 8px;
+          background-color: #3F6AFA ;
+          color: $white-color;
+          display: flex;
+          justify-content: space-between;
+          text-align: start;
+          .text {
+            flex-grow: 2;
+          }
+          .number {
+            background-color: $white-color;
+            border-radius: 50px;
+            // margin-inline-start: 65%;
+            padding: 5px 20px;
+            color: #3F6AFA ;
+            font-weight: bold;
+            margin-inline-end: 5px;
+          }
+          &::after {
+            filter: invert(1);
+          }
+        }
+        &.first-accordion {
+          .accordion-button:not(.collapsed) {
+            background-color: transparent;
+            box-shadow: none;
+            color: #000;
+            &::after {
+              filter: invert(0);
+            }
+          }
+        }
+
+        .accordion-body {
+          .form-check-input {
+            width: 20px;
+            height: 20px;
+          }
+          .list-group {
+            padding: 0;
+            margin: 0;
+            .list-group-item {
+              padding-inline: 0;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border: none;
+              .info {
+                display: flex;
+                .alert {
+                  margin: 0;
+                  padding: 5px 15px;
+                  border-start-start-radius: 50px;
+                  border-end-start-radius: 50px;
+                  border-inline-end-width: 5px;
+                  border-top-color: transparent;
+                  border-bottom-color: transparent;
+                  border-inline-start-color: transparent;
+                }
+                .dropdown {
+                  .dropdown-toggle {
+                    &::after {
+                      display: none;
+                    }
+                  }
+                  .dropdown-item:focus, .dropdown-item:hover {
+                    background-color: #88A2F9;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .title-filter {
+      margin-bottom: 15px;
+      .btn-main {
+        background-color: #3F6AFA;
+        border-radius: 50px;
+        padding: 5px 15px;
+        color: $white-color;
+      }
+    }
+  }
+}

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { RouterLink } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AuthModule } from './auth/auth.module';
     RouterLink,
     FormsModule,
     AuthModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
