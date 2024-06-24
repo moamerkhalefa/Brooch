@@ -1,5 +1,5 @@
 aside.sidebar {
-  width: 320px;
+  width: 16.66666666666667%;
   background:url(../../imgs/bgside.png) center center ;
   background-size: cover;
   position: fixed;
@@ -12,7 +12,10 @@ aside.sidebar {
   justify-content: space-between;
   z-index: 999;
   .sidebar-brand {
-    padding: 50px;
+    padding: rem(20);
+    @media (min-width: 1400px)  {
+      padding: rem(50);
+    }
     img {
       width: 100%;
     }
@@ -28,18 +31,23 @@ aside.sidebar {
     gap: 1.5rem;
     &.main-list {
       flex-grow: 2;
-      padding-top: 100px;
+      padding-top: rem(50);
+      @media (min-width: 1400px)  {
+        padding-top: rem(100);
+      }
     }
     li {
       a {
-        padding: 15px 20px;
+        padding: rem(7) rem(15);
+        @media (min-width: 1400px)  {
+          padding: rem(15) rem(20) ; }
         display: flex;
         gap : .5rem;
-        border-radius: 10px;
+        border-radius: rem(10);
         text-decoration: none;
         color: var(--white-color);
-        font-size: 18px;
-        margin-inline-end: 15px;
+        font-size: rem(18);
+        margin-inline-end: rem(15);
         position: relative;
         // transition: all 0.3s ease-in-out;
         &::after {
@@ -56,8 +64,8 @@ aside.sidebar {
 
         }
         img {
-          width: 25px;
-          height: 25px;
+          width: rem(25);
+          height: rem(25);
         }
         &:hover {
           background-color: rgba($white-color , .11);
@@ -72,8 +80,12 @@ aside.sidebar {
       }
     }
     &:last-child {
-      margin-bottom: 15px;
-      padding-top: 10px;
+      margin-bottom: rem(5);
+      padding-top: rem(5);
+      @media (min-width: 1400px)  {
+        margin-bottom: rem(15);
+      padding-top: rem(10);
+      }
       border-top: 1px solid rgba($white-color , .11);
       a {
         justify-content: center;

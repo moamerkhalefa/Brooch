@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Brooch';
+  loginShow:boolean = false;
+
+  constructor() {}
+  checkLogin() {
+    if(localStorage.getItem('userToken') != null) {
+      this.loginShow = true;
+    } else {
+      this.loginShow = false;
+    }
+  }
 }

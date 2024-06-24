@@ -1,28 +1,33 @@
 .main-header {
-  margin-block: 20px;
+  // --height-cover: calc(150px / 16px )rem;
+  // @media (min-width: 1400px)  {
+  //   --height-cover: rem(200);
+  // }
+  margin-block: rem(20);
   background-image: linear-gradient(to right, rgba(#B9ACF8,.30 ), rgba(#B9ACF8,.30 )) , url(../../imgs/bgTest.png);
 
   background-position: center center;
   background-size: cover;
-  height: 200px;
-  border-radius: 20px;
+  // height: var(  --height-cover);
+  border-radius: rem(20);
   box-shadow: 0 15px 47.4px #DEDEF2;
   .content {
-    height: 200px;
-    padding: 20px;
+    // height: var(  --height-cover);
+    padding: rem(20);
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .image {
-    height: 200px;
+    // height: var(  --height-cover);
     display: grid;
     place-items: center;
     position: relative;
+    margin-block: rem(20);
     img {
       position: relative;
       z-index: 2;
-      width: 300px;
+      width: rem(300);
       max-width: 100%;
       filter: drop-shadow(0 0 0.75rem rgba(#000,0.11));
     }

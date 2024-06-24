@@ -1,27 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { TechnicalSupportComponent } from './pages/technical-support/technical-support.component';
-import { RealEstateComponent } from './pages/real-estate/real-estate.component';
-import { InformationPanelComponent } from './pages/information-panel/information-panel.component';
-import { TasksComponent } from './pages/tasks/tasks.component';
+import { authGuard } from './authorized/guards/auth.guard';
 
 const routes: Routes = [
-  {path:'', redirectTo: 'tasks', pathMatch: 'full'},
-  // {path:'home',canActivate:[AuthGuard], component: HomeComponent},
-  {path:'tasks',component:TasksComponent},
-  {path:'informationPanel',component:InformationPanelComponent},
-  {path:'realEstate',component:RealEstateComponent},
-  {path:'technicalSupport',component:TechnicalSupportComponent},
-  {path:'login',component:LoginComponent},
-  {path:'forgotPassword',component:ForgotPasswordComponent},
-  {path:'register',component:RegisterComponent},
+  {
+    path: '',
+    redirectTo: 'admin',
+    pathMatch: 'full',
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./authorized/authorized.module').then((m) => m.AuthorizedModule),
+  },
+  {
+    path: 'errors',
+    loadChildren: () =>
+      import('./errors/errors.module').then((m) => m.ErrorsModule),
+  },
+
+
+
+  { path: '**', redirectTo: 'errors/not-found' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

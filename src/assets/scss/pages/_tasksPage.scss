@@ -3,6 +3,7 @@
     .accordion {
       .accordion-item {
         border: none;
+        margin-bottom: rem(7);
         .accordion-button {
           border-radius: 8px;
           background-color: #3F6AFA ;
@@ -10,6 +11,7 @@
           display: flex;
           justify-content: space-between;
           text-align: start;
+          padding: rem(10);
           .text {
             flex-grow: 2;
           }
@@ -38,6 +40,7 @@
         }
 
         .accordion-body {
+          padding: .5rem;
           .form-check-input {
             width: 20px;
             height: 20px;

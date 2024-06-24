@@ -9,20 +9,26 @@ import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 import { RealDetailsComponent } from './real-details/real-details.component';
+import { LayoutComponent } from './layout/layout.component';
+import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
+    LayoutComponent,
     InformationPanelComponent,
     RealEstateComponent,
     TasksComponent,
     TechnicalSupportComponent,
-    RealDetailsComponent
+    RealDetailsComponent,
   ],
   imports: [
     CommonModule,
     TableModule,
     TagModule,
-    ButtonModule
+    ButtonModule,
+    SharedModule,
+    RouterModule
   ]
 })
 export class PagesModule { }

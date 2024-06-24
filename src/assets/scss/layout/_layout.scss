@@ -1,7 +1,11 @@
 .sidebar-wrapper {
-  --width-sidebar: 300px ;
+  --width-sidebar: 16.66666666666667% ;
   padding: 1rem 2rem;
-  padding-inline-start: calc(var(--width-sidebar) + 2.5rem );
+  padding-inline-start: calc(var(--width-sidebar) + 1.5rem );
+  @media (min-width: 1400px)  {
+    padding-inline-start: calc(var(--width-sidebar) + 2.5rem );
+
+  }
   background-color: #FCFCFF;
   min-height: 100svh;
   width: 100%;
