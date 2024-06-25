@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Support } from 'src/app/pages/interface/support';
-import { SupportService } from 'src/app/pages/services/support.service';
+import { SupportService } from '../../services/support.service';
+import { Support } from '../../interface/support';
 
 
 interface Column {

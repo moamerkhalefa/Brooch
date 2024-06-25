@@ -11,9 +11,11 @@ nav.nav-bar {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   box-shadow: 0 14px 34px #F5F3FF;
+  .icon-toggle {
+    display: none;
+  }
   .user-info {
     display: flex;
     align-items: center;
@@ -40,6 +42,7 @@ nav.nav-bar {
     display: flex;
     align-items: center;
     gap: 20px;
+    margin-inline-start: auto;
     a.btn-main {
       display: flex;
       align-items: center;
@@ -105,6 +108,19 @@ nav.nav-bar {
       }
       &:hover {
         background-color: rgba(#4D5ED2 , .11);
+      }
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  nav.nav-bar {
+    .icon-toggle {
+      display: block;
+      margin-inline-end: 10px;
+    }
+    .topBar-menu {
+      .new-reservation {
+        display: none;
       }
     }
   }

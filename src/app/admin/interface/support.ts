@@ -10,4 +10,3 @@ export interface Support {
   image?: string;
   rating?: number;
 }
-

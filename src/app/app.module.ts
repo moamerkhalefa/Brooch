@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
-import { PagesModule } from './pages/pages.module';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { PagesModule } from './pages/pages.module';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    PagesModule
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
