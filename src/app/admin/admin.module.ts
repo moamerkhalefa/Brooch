@@ -15,6 +15,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { RealEstateComponent } from './components/real-estate/real-estate.component';
 import { InformationPanelComponent } from './components/information-panel/information-panel.component';
 import { ErrorsModule } from '../errors/errors.module';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ErrorsModule } from '../errors/errors.module';
     ButtonModule,
     SharedModule,
     RouterModule,
-    ErrorsModule
+    ErrorsModule,
+    FullCalendarModule
   ]
 })
 export class AdminModule { }

@@ -19,6 +19,9 @@ aside.sidebar {
     img {
       width: 100%;
     }
+    .small-logo {
+      display: none;
+    }
   }
 
   .sidebar-nav {
@@ -93,4 +96,34 @@ aside.sidebar {
     }
   }
 
+}
+@media (min-width: 575.98px) and (max-width: 1199.98px)
+{
+  aside.sidebar {
+    width: 80px;
+    .sidebar-brand {
+      .logo-light {
+        display: none;
+      }
+      .small-logo {
+        display: block;
+      }
+    }
+    .sidebar-nav {
+      li {
+        a {
+          .item-name {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+}
+@media (max-width: 575.98px) {
+  aside.sidebar {
+    width: rem(280);
+    inset-inline-start: -280px;
+  }
 }

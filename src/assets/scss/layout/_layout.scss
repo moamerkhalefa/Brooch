@@ -10,3 +10,20 @@
   min-height: 100svh;
   width: 100%;
 }
+
+@media (min-width: 575.98px) and (max-width: 1199.98px) {
+  .sidebar-wrapper  {
+    --width-sidebar: 80px ;
+    padding-inline-start: calc(var(--width-sidebar) + 1rem );
+  }
+
+}
+
+@media (max-width: 575.98px) {
+  .sidebar-wrapper  {
+    --width-sidebar: 0 ;
+    padding-inline-start: calc(var(--width-sidebar) + 1rem );
+    padding: 1rem ;
+
+  }
+}

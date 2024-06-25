@@ -116,7 +116,9 @@
     .card-group {
       padding-inline: 50px;
       display: grid;
-      grid-template-columns: repeat(5 , 1fr);
+      // grid-template-columns: repeat(5 , 1fr);
+      grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+
       gap: 20px;
       .card-overview {
         padding: 25px 5px 5px;
